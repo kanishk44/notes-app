@@ -64,10 +64,6 @@ https://crudcrud.com/api/40bf10247e5348f8819d720979cba00b/notes
 1. Get a new API endpoint from [crudcrud.com](https://crudcrud.com)
 2. Replace the `API_URL` in the JavaScript code with your new endpoint
 
-## 📱 Screenshots
-
-[Add your screenshots here]
-
 ## 🤝 Contributing
 
 1. Fork the repository
