@@ -106,7 +106,7 @@
         try {
           const response = await axios.get(API_URL);
           const notesList = document.getElementById("notesList");
-          notesList.innerHTML = ""; // Clear existing notes
+          notesList.innerHTML = "";
           response.data.forEach((note) => addNoteToUI(note));
         } catch (error) {
           console.error("Error loading notes:", error);
