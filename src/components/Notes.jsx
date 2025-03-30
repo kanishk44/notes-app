@@ -51,16 +51,13 @@ const Notes = () => {
           Add Note
         </button>
       </form>
-      <div className="flex flex-col items-center">
-        {notes.filter((note) => note.title.includes(search)).length === 0 && (
-          <p className="text-white">No notes found</p>
-        )}
+      <div className="grid grid-cols-3 gap-4 items-center">
         {notes
           .filter((note) => note.title.includes(search))
           .map((note, index) => (
             <div key={index} className="flex flex-col items-center">
-              <h3 className="text-lg font-bold">{note.title}</h3>
-              <p className="text-sm">{note.description}</p>
+              <h3 className="text-lg font-bold text-white">{note.title}</h3>
+              <p className="text-sm text-white">{note.description}</p>
               <button
                 onClick={() => handleDelete(index)}
                 className="bg-red-500 text-white p-2 rounded-md mt-2 cursor-pointer"
@@ -69,17 +66,20 @@ const Notes = () => {
               </button>
             </div>
           ))}
-        {notes.length > 0 && (
-          <p className="text-sm mt-2">Total notes: {notes.length}</p>
-        )}
-        <p className="text-sm mt-2">
-          Currently showing{" "}
-          {notes.filter((note) => note.title.includes(search)).length}
-          {notes.filter((note) => note.title.includes(search)).length > 1
-            ? " notes"
-            : " note"}
-        </p>
       </div>
+      {notes.filter((note) => note.title.includes(search)).length === 0 && (
+        <p className="text-white">No notes found</p>
+      )}
+      {notes.length > 0 && (
+        <p className="text-sm mt-2 text-white">Total notes: {notes.length}</p>
+      )}
+      <p className="text-sm mt-2 text-white">
+        Currently showing{" "}
+        {notes.filter((note) => note.title.includes(search)).length}
+        {notes.filter((note) => note.title.includes(search)).length > 1
+          ? " notes"
+          : " note"}
+      </p>
     </div>
   );
 };
